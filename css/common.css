@@ -1,0 +1,179 @@
+*{
+	border: solid 1px red;
+	margin-bottom: 5px;
+}
+header {
+	width: 100%; height: 200px;
+	margin-bottom: 20px;
+	
+	background-color: #333;
+	color: #fff;
+
+	position: static;
+	top: 0;
+	text-align: center;
+	z-index: 1000;
+
+	opacity: 1;
+	transition: opacity 0.5s ease-in-out;
+}
+header.sticky {
+	position: sticky; /* 스크롤을 움직일 때 sticky로 설정 */
+	top: 0;
+}
+
+header.hidden {
+	opacity: 0;
+}
+
+/*header fin*/
+
+#main_contents {
+	width: 1140px;
+	height: 2500px;
+	padding: 5px;
+	margin: 0 auto;
+}
+/*main_contents fin*/
+
+#main_banner {
+	width: 67.2%;
+	height: 252px;
+	float: left;
+	position: relative;
+    overflow: hidden;
+}
+#sub_banner {
+	width: 32%;
+	height: 252px;
+	float: right;
+	position: relative;
+    overflow: hidden;
+}
+.slideContainer1, .slideContainer2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+	box-sizing: border-box;
+    min-width: 100%;
+	min-height: 100%;
+}
+.slide img {
+    width: 100%;
+	height: 100%;
+    vertical-align: middle;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/*banenr fin*/
+
+#news {
+	width: 29.2%;
+	height: 382px;
+	float: left;
+}
+#promo {
+	width: 29.2%;
+	height: 293px;
+	float: left;
+}
+#article_nav {
+	width: 70%;
+	height: 75px;
+	float: right;
+	background-color: #0f3458;
+	text-align: center;
+}
+#article_nav ul {
+	list-style: none;
+	padding: 0;
+	display: inline-block;
+}
+#article_nav ul li {
+	margin-right: 15px;
+	display: inline;
+}
+#article_nav ul li a {
+	text-decoration: none;
+	color: #dee3e7;
+	font-weight: bold;
+	font-size: 2em;
+}
+#article_nav ul li a:hover {
+	text-decoration: underline;
+}
+/*artivle_nav fin*/
+
+#article_con {
+	width: 70%;
+	height: 600px;
+	float: right;
+}
+
+/*------------------------------------*/
+#headline{
+	width: 58%;
+	height: 330px;
+	float: left;
+}
+#board{
+	width: 41.2%;
+	height: 330px;
+	float: right;
+}
+#calender{
+	width: 32.87%;
+	height: 330px;
+	margin-right: 4.2px;
+	float: left;
+}
+#rank{
+	width: 32.87%;
+	height: 330px;
+	display: inline-block;
+}
+#album{
+	width: 32.87%;
+	height: 330px;
+	float: right;
+}
+#theme1{
+	width: 1138px;
+	height: 330px;
+	display: inline-block;
+}
+#theme2{
+	width: 1138px;
+	height: 330px;
+	display: inline-block;
+}
+#theme3{
+	width: 1138px;
+	height: 202px;
+	display: inline-block;
+}
+footer {
+	width: 100%;
+	height: 255px;
+	margin-top: 20px;
+}
