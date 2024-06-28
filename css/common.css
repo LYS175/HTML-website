@@ -1,32 +1,105 @@
 *{
-	border: solid 1px red;
+	/*border: solid 1px red;*/
 	margin-bottom: 5px;
 }
-header {
-	width: 100%; height: 200px;
+
+.header-container {
+	width: 100%;
+	height: auto;
 	margin-bottom: 20px;
-	
 	background-color: #333;
 	color: #fff;
-
 	position: static;
 	top: 0;
 	text-align: center;
 	z-index: 1000;
-
 	opacity: 1;
 	transition: opacity 0.5s ease-in-out;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	box-sizing: border-box;
 }
-header.sticky {
+.header-container.sticky {
 	position: sticky; /* 스크롤을 움직일 때 sticky로 설정 */
 	top: 0;
 }
-
-header.hidden {
+.header-container.hidden {
 	opacity: 0;
 }
-
+.header-container .nav {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+.header-container .logo {
+	font-size: 24px;
+	font-weight: bold;
+	margin-right: 20px;
+}
+.header-container .search-group {
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+}
+.header-container .search-group input[type="text"] {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 300px;
+	margin-right: 10px;
+}
+.header-container .search-group button {
+	background-color: #555;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.header-container .search-group button:hover {
+	background-color: #777;
+}
+.header-container .auth-group {
+	display: flex;
+	align-items: center;
+	margin-left: 20px;
+}
+.header-container .auth-group button {
+	background-color: #555;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.header-container .auth-group button:hover {
+	background-color: #777;
+}
+.header-container .navigator {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.header-container .navigator a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0 15px;
+	padding: 10px;
+	transition: color 0.3s, background-color 0.3s;
+}
+.header-container .navigator a:hover {
+	color: #333;
+	background-color: #fff;
+	border-radius: 5px;
+}
 /*header fin*/
+
 
 #main_contents {
 	width: 1140px;
@@ -35,6 +108,7 @@ header.hidden {
 	margin: 0 auto;
 }
 /*main_contents fin*/
+
 
 #main_banner {
 	width: 67.2%;
@@ -62,7 +136,7 @@ header.hidden {
 .slide img {
     width: 100%;
 	height: 100%;
-    vertical-align: middle;
+    object-fit: cover;
 }
 .prev, .next {
     cursor: pointer;
@@ -85,78 +159,319 @@ header.hidden {
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-/*banenr fin*/
+/*배너 스타일 끝*/
+
 
 #news {
 	width: 29.2%;
 	height: 382px;
 	float: left;
+	box-sizing: border-box;/*리스트에 의해 크기가 변경되지 않게 고정*/
+
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
 }
+#news ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+#news li {
+	padding: 15px;
+	border-bottom: 1px solid #eee;
+	display: flex;
+	align-items: center;
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	opacity: 1;
+	height: 10%; /* 리스트 항목의 높이를 10%로 설정 */
+	box-sizing: border-box;
+}
+#news .rank {
+	width: 20px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+#news li.hidden {
+	opacity: 0;
+	transform: translateY(20px);
+}
+/*최신순위 스타일 끝*/
+
+
 #promo {
 	width: 29.2%;
 	height: 293px;
 	float: left;
+	box-sizing: border-box;
+
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+	display: flex;
+	flex-direction: column; /* Flex 방향을 컬럼으로 변경 */
+
+	justify-content: center; /* 수직 중앙 정렬 */
+	align-items: center; /* 수평 중앙 정렬 */
+
+	justify-content: space-around;
+	padding: 5px;
 }
+.promo-img {
+	width: 315px;
+	height: 90px; /* 이미지의 높이를 고정 */
+	transition: transform 0.3s;
+	margin-bottom: 5px; /* 이미지 사이 간격 조절 */
+}
+.promo-img:hover {
+	transform: scale(1.2);
+}
+/*프로모션 스타일 끝*/
+
+
 #article_nav {
 	width: 70%;
 	height: 75px;
 	float: right;
-	background-color: #0f3458;
+
+	background-color: #154575;
 	text-align: center;
 }
 #article_nav ul {
-	list-style: none;
+	list-style-type: none;
 	padding: 0;
-	display: inline-block;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
 }
-#article_nav ul li {
-	margin-right: 15px;
-	display: inline;
+#article_nav li {
+	margin: 5px;
+	font-size: 28px; /* 글자 크기 증가 */
+	font-weight: bold; /* 글자 굵게 */
+	transition: transform 0.3s, color 0.3s;
+	position: relative;
+	padding: 0 15px; /* 구분자를 위한 패딩 */
 }
-#article_nav ul li a {
+#article_nav li:not(:last-child)::after {
+	content: "|";
+	font-size: 40px;
+	position: absolute;
+	right: -10px;
+	color: #333;
+}
+#article_nav li:hover {
+	transform: scale(1.1);
+	color: #fff; /* 글자 색 반전 */
+}
+#article_nav a {
 	text-decoration: none;
-	color: #dee3e7;
-	font-weight: bold;
-	font-size: 2em;
+	margin: 0;
+	color: inherit;
+	display: inline-block;
+	padding: 10px 20px;
 }
-#article_nav ul li a:hover {
-	text-decoration: underline;
-}
-/*artivle_nav fin*/
+/*기사 네비게이터 스타일 끝*/
+
 
 #article_con {
 	width: 70%;
 	height: 600px;
 	float: right;
 }
+#article_con ul {
+	list-style-type: none; /* 리스트 스타일 없애기 */
+	padding: 0; /* 패딩 없애기 */
+	margin: 0;
 
-/*------------------------------------*/
-#headline{
-	width: 58%;
-	height: 330px;
-	float: left;
+	display: flex; /* 플렉스박스 사용 */
+	flex-wrap: wrap; /* 여러 줄로 나열 */
+	gap: 10px; /* 카드 사이의 간격 */
 }
-#board{
+#article_con li {
+	background-color: #f9f9f9; /* 배경색 */
+	border: 1px solid #ddd; /* 테두리 */
+	margin-bottom: 0;/*모든 클래스 마진 8 지정자 무시*/
+
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 */
+	overflow: hidden; /* 넘치는 내용 숨기기 */
+	flex: 1 1 calc(33.333% - 20px); /* 3개씩 나열되도록 설정 */
+	box-sizing: border-box; /* 박스 사이징 설정 */
+}
+#article_con figure {
+	margin: 0; /* 마진 없애기 */
+	padding: 0; /* 패딩 없애기 */
+	display: flex; /* 플렉스박스 사용 */
+	flex-direction: column; /* 세로 정렬 */
+	align-items: center; /* 가운데 정렬 */
+}
+#article_con img {
+	width: 100%; /* 가로 크기 100% */
+	height: 175px; /* 고정 높이 설정 */
+	object-fit: cover; /* 비율을 유지하며 영역을 채우기 */
+}
+#article_con figcaption {
+	padding: 17px; /* 내부 패딩 설정 */
+}
+#article_con dt, #article_con dl,
+#article_con dd {
+	margin: 0; /* 마진 없애기 */
+	padding: 0; /* 패딩 없애기 */
+}
+#article_con dt {
+	font-weight: bold; /* 굵은 글씨 */
+	margin-bottom: 10px; /* 아래 마진 */
+}
+/*기사 본문 스타일 끝*/
+
+
+#headline {
+    width: 58%;
+    height: 330px;
+    float: left;
+    background-image: url('../images/headL.jpg'); /* 배경 이미지 URL을 여기 입력 */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(220, 241, 25);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+#headline:hover {
+    animation: shake 0.5s infinite;
+}
+@keyframes shake {/*이미지의 수평 좌표값 변경*/
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+#headline h1 {
+    text-decoration: underline;
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+#headline p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+    color: gray;
+    transition: all 0.3s ease;
+}
+#headline:hover h1,
+#headline:hover p {
+    color: blue;
+    transform: scale(1.1);
+}
+/*주요뉴스 스타일 끝*/
+
+#board {
 	width: 41.2%;
 	height: 330px;
 	float: right;
+
+	position: relative;
+	background-color: #000; /* 배경을 검은색으로 설정 */
 }
-#calender{
+#board video {
+	width: 100%;
+	height: 100%;
+	display: contents; 
+}
+#play-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 48px; /* 아이콘 크기 */
+	color: #fff;
+	cursor: pointer;
+}
+/*동영상 스타일 끝*/
+
+
+#calendar {
 	width: 32.87%;
 	height: 330px;
 	margin-right: 4.2px;
 	float: left;
+
+	text-align: center;
+	position: relative;
+	overflow: hidden;
 }
+#calendar .month {
+	display: none;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #000;
+	box-sizing: border-box;
+}
+#calendar .month h2 {
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 10px 0;
+}
+#calendar .days {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	overflow: hidden;
+}
+#calendar .day {
+	width: 14.28%;
+	padding: 5px;
+	box-sizing: border-box;
+	text-align: center;
+}
+#calendar .controls {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	transform: translateY(-50%);
+}
+#calendar .controls button {
+	padding: 10px;
+	font-size: 16px;
+	background-color: #f0f0f0;
+	border: 1px solid #000;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.8);
+}
+/*달력 스타일 끝*/
+
+
 #rank{
 	width: 32.87%;
 	height: 330px;
 	display: inline-block;
 }
+
+
 #album{
 	width: 32.87%;
 	height: 330px;
 	float: right;
 }
+
+
 #theme1{
 	width: 1138px;
 	height: 330px;
@@ -172,6 +487,8 @@ header.hidden {
 	height: 202px;
 	display: inline-block;
 }
+
+
 footer {
 	width: 100%;
 	height: 255px;

@@ -5,18 +5,35 @@
 		<link rel="stylesheet" href="css/common.css">
 	</head>
 	<body>
-		<header id="header">
-			Sticky Header
+		<header id="header" class="header-container">
+			<div class="nav">
+				<div class="logo">THIS GAME</div>
+				<div class="search-group">
+					<input type="text" class="search-bar" placeholder="Search...">
+					<button>Search</button>
+				</div>
+				<div class="auth-group">
+					<button>Sign Up</button>
+					<button>Login</button>
+				</div>
+			</div>
+			<div class="navigator">
+				<a href="#">홈으로</a>
+				<a href="#">공지사항</a>
+				<a href="#">제보하기</a>
+				<a href="#">이용안내</a>
+				<a href="#">고객지원</a>
+			</div>
 		</header>
 		<section id='main_contents'>
 			<div id='main_banner'>
 				<div class="slideContainer1">
-					<div class="slide"><img src="./images/a.jpg" alt="Image 1"></div>
-					<div class="slide"><img src="./images/b.jpg" alt="Image 2"></div>
-					<div class="slide"><img src="./images/c.jpg" alt="Image 3"></div>
+					<div class="slide"><img src="./images/banner1.png" alt="Image 1"></div>
+					<div class="slide"><img src="./images/banner2.jpg" alt="Image 2"></div>
+					<div class="slide"><img src="./images/banner3.jpg" alt="Image 3"></div>
 				</div>
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				<a class="prev" onclick="plusSlides1(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides1(1)">&#10095;</a>
 			</div>	
 			<div id='sub_banner'>
 				<div class="slideContainer2">
@@ -24,55 +41,102 @@
 					<div class="slide"><img src="./images/b.jpg" alt="Image 2"></div>
 					<div class="slide"><img src="./images/c.jpg" alt="Image 3"></div>
 				</div>
-				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+				<a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides2(1)">&#10095;</a>
 			</div>
-			<div id='news'>
-				최신 소식
+			<div id="news">
+				<ul id="ranking">
+					<!-- 초기 검색어 리스트 -->
+					<li><span class="rank">1</span>리그 레게노</li>
+					<li><span class="rank">2</span>마법사 체스</li>
+					<li><span class="rank">3</span>신의 한 수</li>
+					<li><span class="rank">4</span>애꾸는 블랙잭</li>
+					<li><span class="rank">5</span>술래잡기</li>
+					<li><span class="rank">6</span>우주 닌자</li>
+					<li><span class="rank">7</span>우리중에</li>
+					<li><span class="rank">8</span>날으는 지건</li>
+					<li><span class="rank">9</span>승호리 철교</li>
+				</ul>
 			</div>
 			<div id='article_nav'>
 				<ul>
-					<li><a href="#trending">화제</a></li>
-					<li><a href="#popular">인기</a></li>
-					<li><a href="#genre">장르</a></li>
-					<li><a href="#guides">공략</a></li>
-					<li><a href="#more">더보기+</a></li>
+					<li><a href="#" onclick="loadContent('trending')">화제</a></li>
+					<li><a href="#" onclick="loadContent('popular')">인기</a></li>
+					<li><a href="#" onclick="loadContent('genre')">장르</a></li>
+					<li><a href="#" onclick="loadContent('guides')">공략</a></li>
+					<li><a href="#" onclick="loadContent('more')">더보기+</a></li>
 				</ul>
 			</div>
 			<div id='article_con'>
 				<ul>
 					<li>
 						<figure>
-							<img src="./images/ alt="example">
+							<img src="./images/LoL.jpg" alt="example">
 							<figcaption>
 								<dl>
-									<dt>wowowowowow</dt>
-									<dd>wowowowowow</dd>
-									<dd>wowowowowow</dd>
+									<dt>손 안대고 이기기</dt>
+									<dd>손을 안대고 이기는 법은</dd>
+									<dd>그런건 없다 긁? 긁? 긁?</dd>
 								</dl>
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="" alt="example">
+							<img src="./images/chess.png" alt="example">
 							<figcaption>
 								<dl>
-									<dt>wowowowowow</dt>
-									<dd>wowowowowow</dd>
-									<dd>wowowowowow</dd>
+									<dt>웹페이지 만들기</dt>
+									<dd>아 진짜 너무 귀찮다</dd>
+									<dd>자고 싶은데 잘 수가 없다</dd>
 								</dl>
 							</figcaption>
 						</figure>
 					</li>
 					<li>
 						<figure>
-							<img src="./images/" alt="example">
+							<img src="./images/dbd.jpg"alt="example">
 							<figcaption>
 								<dl>
-									<dt>wowowowowow</dt>
-									<dd>wowowowowow</dd>
-									<dd>wowowowowow</dd>
+									<dt>챗 지피티 활용</dt>
+									<dd>프롬프팅: 해 줘.</dd>
+									<dd>지피티: 옛 썰!!!!</dd>
+								</dl>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="./images/rain6.jpg"alt="example">
+							<figcaption>
+								<dl>
+									<dt>팀운이 좋나요?</dt>
+									<dd>그게 당신 운명입니다!</dd>
+									<dd>받아들이세요</dd>
+								</dl>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="./images/hearthston.png" alt="example">
+							<figcaption>
+								<dl>
+									<dt>내 돈 안내고 밥 먹는법</dt>
+									<dd>그건 바로..........</dd>
+									<dd>남의 돈으로 먹는 것이다</dd>
+								</dl>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="./images/overww.png" alt="example">
+							<figcaption>
+								<dl>
+									<dt>뒤로 백덤블링</dt>
+									<dd>간지 뒤졌죠?</dd>
+									<dd>무릅 관절도 뒤졌죠?</dd>
 								</dl>
 							</figcaption>
 						</figure>
@@ -80,28 +144,83 @@
 				</ul>
 			</div>
 			<div id='promo'>
-				프로모션
+				<img src="./images/ad1.jpg" alt="Image 1" class="promo-img">
+				<img src="./images/ad2.jfif" alt="Image 2" class="promo-img">
+				<img src="./images/ad3.jfif" alt="Image 3" class="promo-img">
 			</div>
-			<div id='headline'>
-				주요뉴스
+			<div id="headline">
+				<h1>세상에 어떻게 이런일이!!</h1>
+				<p>2024-06-28</p>
 			</div>
 			<div id='board'>
-				유저 게시판
+				<video id="video" src="./images/earth.mp4" controls></video>
+				<div id="play-button">▶</div>
 			</div>
-			<div id='calender'>
-				달력
+			<div id='calendar'>
+				<div class='month' id='january'>
+					<h2>January</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='february'>
+					<h2>February</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='march'>
+					<h2>March</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='april'>
+					<h2>April</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='may'>
+					<h2>May</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='june'>
+					<h2>June</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='july'>
+					<h2>July</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='august'>
+					<h2>August</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='september'>
+					<h2>September</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='october'>
+					<h2>October</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='november'>
+					<h2>November</h2>
+					<div class='days'></div>
+				</div>
+				<div class='month' id='december'>
+					<h2>December</h2>
+					<div class='days'></div>
+				</div>
+				<div class="controls">
+					<button onclick="prevMonth()"><-</button>
+					<button onclick="nextMonth()">-></button>
+				</div>
 			</div>
 			<div id='rank'>
-				순위
+				메모
 			</div>
 			<div id='album'>
 				사진
 			</div>
 			<div id='theme1'>
-				테마 뉴스 1
+				공지사항
 			</div>
 			<div id='theme2'>
-				테마 뉴스 2
+				제보하기
 			</div>
 			<div id='theme3'>
 				기사 제공처
